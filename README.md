@@ -63,10 +63,10 @@ end
 # includes matching employer contribution
 def get_medicare_tax(status, income)
   tax_rate = 0.124
-  if status = "married" & income > 250000
-    tax_rate += 0.09
-  elsif status = "single" & income > 200000
-    tax_rate += 0.09
+  if status = "married" && income > 250000
+    tax_rate += 0.009
+  elsif status = "single" && income > 200000
+    tax_rate += 0.009
   end
   if income >= 127200
     return tax_rate * 127200
@@ -82,3 +82,6 @@ def get_ss_tax(income)
     return 0.029 * income
   end  
 end
+
+get_medicare_tax("single", 50000)
+get_ss_tax(100000)
