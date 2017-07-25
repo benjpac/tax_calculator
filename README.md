@@ -12,28 +12,40 @@
 
 def get_income_tax(income)
   tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
-  tax_threshold = [9325, 37950, 91900, 191650, 416700]
+  tax_thresholds = [9325, 37950, 91900, 191650, 416700]
   tax_paid = 0
   untaxed_income = income
   i = 0
   while untaxed_income > 0 do
-    puts tax_paid
-    if tax_threshold[i] != NIL
-      if (untaxed_income - tax_threshold[i]) < 0
+    puts 'tax paid = ' + tax_paid.to_s
+    puts 'i = ' + i.to_s
+    if tax_thresholds[i] != NIL
+      if (untaxed_income - tax_thresholds[i]) < 0
+        puts "final bracket"
         tax_paid += (tax_rates[i] * untaxed_income)
         untaxed_income = 0
       else
-        tax_paid += (tax_rates[i] * tax_threshold[i])
-        untaxed_income -= tax_threshold[i]
+        puts "middle bracket"
+        if i != 0
+          taxed_amount = (tax_thresholds[i] - tax_thresholds[i-1])
+          tax_paid += (tax_rates[i] * taxed_amount)
+          untaxed_income -= taxed_amount
+        else
+          puts "lowest bracket"
+          tax_paid += (tax_rates[i] * tax_thresholds[i])
+          untaxed_income -= tax_thresholds[i]
+        end
       end
     else
+      puts "max bracket"
       tax_paid += (tax_rates[i] * untaxed_income)
       untaxed_income = 0
     end
     i += 1
   end
-  puts untaxed_income
   return tax_paid
 end
 
+# get_income_tax(9325)
+# get_income_tax(37950)
 get_income_tax(91900)
