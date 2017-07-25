@@ -10,6 +10,14 @@
 * allow users to manually add state income tax
 * add state selection box
 
+married
+tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
+tax_thresholds = [18650, 75900, 153100, 233350, 416700, 470700]
+
+head of household
+tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
+tax_thresholds = [13350, 50800, 131200, 212500, 416700, 444500]
+
 def get_income_tax(income)
   tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
   tax_thresholds = [9325, 37950, 91900, 191650, 416700, 418400]
