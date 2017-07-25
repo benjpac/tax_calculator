@@ -46,8 +46,6 @@ def get_income_tax(income)
       end
     else
       puts "max bracket"
-      puts untaxed_income
-      puts i
       tax_paid += (tax_rates[i] * untaxed_income)
       untaxed_income = 0
     end

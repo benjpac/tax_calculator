@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20170724231111) do
   enable_extension "plpgsql"
 
   create_table "rates", force: :cascade do |t|
-    t.decimal "percentage"
-    t.int4range "bracket"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "fed_inc_rates", default: ["0.1", "0.15", "0.25", "0.28", "0.33", "0.35", "0.396"], array: true
+    t.decimal "fed_inc_thresholds", default: ["9325.0", "37950.0", "91900.0", "191650.0", "416700.0", "418400.0"], array: true
+    t.decimal "fed_medicare_rate"
+    t.decimal "fed_ss_rate"
   end
 
   create_table "users", force: :cascade do |t|
