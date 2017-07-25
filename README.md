@@ -9,6 +9,7 @@
 * add expected return on medicare / ss benefit, given a retirement age and expected pay change by year
 * allow users to manually add state income tax
 * add state selection box
+* add self-employed option for medicare
 
 married
 tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
@@ -58,3 +59,26 @@ end
 # get_income_tax(9325)
 # get_income_tax(37950)
 # get_income_tax(1000000)
+
+# includes matching employer contribution
+def get_medicare_tax(status, income)
+  tax_rate = 0.124
+  if status = "married" & income > 250000
+    tax_rate += 0.09
+  elsif status = "single" & income > 200000
+    tax_rate += 0.09
+  end
+  if income >= 127200
+    return tax_rate * 127200
+  else
+    return tax_rate * income
+  end
+end
+
+def get_ss_tax(income)
+  if income >= 127200
+    return 0.029 * 127200
+  else
+    return 0.029 * income
+  end  
+end
