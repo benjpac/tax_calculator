@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
+  
+  get 'rates/index'
 
-  get 'sessions/destroy'
+  root to: "rates#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/signin' => 'sessions#new'

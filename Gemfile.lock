@@ -41,13 +41,14 @@ GEM
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     arel (8.0.0)
-    autoprefixer-rails (7.1.2.2)
+    autoprefixer-rails (7.1.2.3)
       execjs
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
     bootstrap_form (2.7.0)
     builder (3.2.3)
     byebug (9.0.6)
@@ -74,6 +75,7 @@ GEM
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
     ffi (1.9.18)
+    ffi (1.9.18-x86-mingw32)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.6)
@@ -101,11 +103,16 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.2.0)
     minitest (5.10.3)
+    morris.js-rails (1.0.1)
+      jquery-rails (>= 1.0.17)
     multi_json (1.12.1)
     nio4r (2.1.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.0-x86-mingw32)
+      mini_portile2 (~> 2.2.0)
     pg (0.21.0)
+    pg (0.21.0-x86-mingw32)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -199,8 +206,11 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    wdm (0.1.1)
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -214,10 +224,11 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap-sass (~> 3.3.6)
+  bootstrap (~> 4.0.0.alpha6)
   bootstrap_form
   byebug
   capybara
@@ -227,6 +238,7 @@ DEPENDENCIES
   jquery-rails (~> 4.3, >= 4.3.1)
   launchy
   listen (>= 3.0.5, < 3.2)
+  morris.js-rails
   pg (~> 0.18)
   pry
   puma (~> 3.7)
@@ -240,7 +252,8 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
+  wdm (>= 0.1.0)
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.12.5
+   1.15.1
