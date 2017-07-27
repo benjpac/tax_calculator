@@ -11,12 +11,4 @@
 * add state selection box
 * add self-employed option for medicare
 
-married
-tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
-tax_thresholds = [18650, 75900, 153100, 233350, 416700, 470700]
-
-head of household
-tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
-tax_thresholds = [13350, 50800, 131200, 212500, 416700, 444500]
-
 https://startbootstrap.com/template-overviews/sb-admin-2/

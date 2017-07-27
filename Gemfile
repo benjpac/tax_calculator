@@ -37,6 +37,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'morris.js-rails'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'rb-readline'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

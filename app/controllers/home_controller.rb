@@ -3,8 +3,19 @@ class HomeController < ApplicationController
 
   end
 
-  def get_income_tax
-    income = params[:income].to_i
+  def create
+    income = params[:income2].to_i
+    @calculated_tax = get_income_tax(income)
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js { }
+    end
+  end
+
+
+  private
+
+  def get_income_tax(income)
     tax_rates = [0.1, 0.15, 0.25, 0.28, 0.33, 0.35, 0.396]
     tax_thresholds = [9325, 37950, 91900, 191650, 416700, 418400]
     tax_paid = 0
