@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= bootstrap_form_tag url: '/home/calculate_tax' do |f| %>
+        <%= f.range_field :income, in: 1..100, step: "1" %> 
+        <%= f.text_field :income2 %>
+        <%= f.select :filing_status, [["Single"], ["Married"], ["Head of Household"]], { label: "Filing Status" }, { class: "selectpicker" } %> 
+        <%= f.submit "Calculate Tax" %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div id="area-example" style="height: 250px;"></div>
+    </div>    
+  </div>
+</div>
+
+<script>
+  Morris.Area({
+    element: 'area-example',
+    data: [
+      { y: '2006', a: 100, b: 90 },
+      { y: '2007', a: 75,  b: 65 },
+      { y: '2008', a: 50,  b: 40 },
+      { y: '2009', a: 75,  b: 65 },
+      { y: '2010', a: 50,  b: 40 },
+      { y: '2011', a: 75,  b: 65 },
+      { y: '2012', a: 100, b: 90 }
+    ],
+    xkey: 'y',
+    ykeys: ['a', 'b'],
+    labels: ['Series A', 'Series B']
+  });      
+</script>
