@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724231111) do
+ActiveRecord::Schema.define(version: 20170727213309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,18 +18,23 @@ ActiveRecord::Schema.define(version: 20170724231111) do
   create_table "rates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "region"
     t.string "filing_status"
     t.decimal "fed_inc_rates", default: [], array: true
     t.decimal "fed_inc_thresholds", default: [], array: true
     t.decimal "fed_medicare_rate"
     t.decimal "fed_ss_rate"
+    t.integer "year_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_hash"
     t.string "password_salt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "years", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

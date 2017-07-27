@@ -4,8 +4,10 @@ class HomeController < ApplicationController
   end
 
   def create
-    income = params[:income2].to_i
-    @calculated_tax = get_income_tax(income)
+    income = params[:income2].to_d
+    @income_tax = get_income_tax(income)
+    @medicare_tax = get_medicare_tax(income)
+    @ss_tax = get_ss_tax(income)
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js { }
@@ -55,11 +57,11 @@ class HomeController < ApplicationController
   # get_income_tax(1000000)
 
   # includes matching employer contribution
-  def get_medicare_tax(status, income)
+  def get_medicare_tax(income)
     tax_rate = 0.124
     if status = "married" && income > 250000
       tax_rate += 0.009
-    elsif status = "single" && income > 200000
+    elsif status = ("single" || "head_of_household") && income > 200000
       tax_rate += 0.009
     end
     if income >= 127200

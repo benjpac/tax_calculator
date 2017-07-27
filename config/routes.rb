@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  # map.resources :home, :collection=>{:index => :get, :get_income_tax => :post}
-  get 'home/index'
-
   root to: "home#index"
   resources :home
 

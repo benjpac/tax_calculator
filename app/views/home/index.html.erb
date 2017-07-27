@@ -1,3 +1,4 @@
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -5,18 +6,13 @@
         <%= f.range_field :income, in: 1..1000000, step: "1" %> 
         <%= f.text_field :income2 %>
         <%= f.select :filing_status, [['Single', 'single'], ['Married', 'married'], ['Head of Household', 'head_of_household']], { label: 'Filing Status' }, { class: 'selectpicker' } %> 
-        <%= f.submit "Calculate Tax" %>
+        <%= f.submit "Calculate Tax", class: 'btn btn-success' %>
       <% end %>
       <hr>
-       <div id='tax'>
-          test1
-        <% if @calculated_tax %> 
-            test
-          <h1><%= @calculated_tax %></h1>
-        <% end %>
-      </div>
       <div>
-        <p id='tax2'></p>
+        <p><strong>Income Tax: </strong><span id='income-tax'></span></p>
+        <p><strong>Medicare Tax: </strong><span id='medicare-tax'></span></p>
+        <p><strong>Social Security Tax: </strong><span id='ss-tax'></span></p>
       </div>
     </div>
     <div class="col-md-6">
